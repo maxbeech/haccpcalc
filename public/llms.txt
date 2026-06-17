@@ -1,0 +1,45 @@
+# HACCPCalc
+
+> Free HACCP plan builder and food safety temperature calculator. Builds a
+> 7-principle HACCP plan (hazard analysis, critical control points, critical
+> limits, monitoring, corrective actions, verification, record-keeping) from a
+> food type and its process steps, plus a printable temperature log. Every
+> temperature is cited verbatim from the FDA Food Code 2022.
+
+Site: https://haccpcalc.vercel.app
+
+## What it does
+- HACCP plan builder: select a food (chicken, ground beef, seafood, soups, rice, deli salads, etc.) and process steps; outputs a CCP table with critical limits, monitoring and corrective actions.
+- Cooking temperature calculator: FDA Food Code 2022 minimum internal cooking temperatures by food.
+- Temperature log generator: printable monitoring log sheet for receiving, cooking, cooling, reheating and hot/cold holding.
+- 50-state food code reference: the regulatory agency and FDA Food Code basis for each US state.
+
+## Key facts (FDA Food Code 2022)
+- Poultry: cook to 165°F (74°C) for 1 second. [§3-401.11(A)(2)]
+- Ground meat (beef, pork): cook to 155°F (68°C) for 17 seconds. [§3-401.11(A)(1)]
+- Whole-muscle beef, pork, fish, eggs for immediate service: 145°F (63°C) for 15 seconds. [§3-401.11(B)]
+- Eggs held for service: 155°F for 17 seconds.
+- TCS fruits/vegetables held hot: 135°F. [§3-401.11(C)]
+- Reheating for hot holding: 165°F (74°C) for 15 seconds within 2 hours. [§3-403.11]
+- Cooling: 135°F to 70°F within 2 hours, then to 41°F within 6 hours total. [§3-501.14]
+- Cold holding: at or below 41°F (5°C). Hot holding: at or above 135°F (57°C). [§3-501.16]
+- Temperature danger zone: 41°F to 135°F.
+- Ready-to-eat TCS date marking: use within 7 days at or below 41°F. [§3-501.17]
+- The seven HACCP principles: hazard analysis; determine CCPs; critical limits; monitoring; corrective actions; verification; record-keeping.
+
+## Process categories (FDA process approach)
+- Process 1 (no cook): receive, store, prepare, hold, serve. CCPs: cold holding, date marking.
+- Process 2 (same-day cook & serve): adds a cook step. CCPs: cooking, hot holding.
+- Process 3 (complex): cook, cool, cold-hold, reheat, hot-hold. CCPs: cooking, cooling, reheating, hot holding.
+
+## Pages
+- /                          HACCP plan builder + cooking temperature chart + FAQ
+- /cooking-temperatures      Full FDA Food Code temperature reference
+- /haccp-plan-template/[food]  Per-food HACCP plan templates
+- /food-safety/[state]       Per-state food code & permit reference (50 states)
+- /guides/[slug]             HACCP guides (7 principles, danger zone, cooling rule, HACCP vs ServSafe)
+- /methodology              Sources and how limits are derived
+- /pricing                  Free tier and Pro
+
+## Disclaimer
+HACCPCalc produces planning drafts using the FDA Food Code 2022 model code. States and local jurisdictions adopt the Food Code with amendments. Always confirm your HACCP plan, critical limits and permit requirements with your local regulatory authority and a certified food protection manager.
