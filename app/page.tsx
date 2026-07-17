@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { PlanBuilder } from "@/components/PlanBuilder";
-import { JsonLd, softwareAppLd, faqLd } from "@/components/JsonLd";
+import { JsonLd, softwareAppLd, faqLd, organizationLd, websiteLd } from "@/components/JsonLd";
 import { HOME_FAQ } from "@/lib/faq";
 import { FOOD_TYPES } from "@/lib/data/foodTypes";
 import { COOK_RULE_LIST } from "@/lib/data/temps";
@@ -9,7 +9,7 @@ import { SITE } from "@/lib/site";
 export default function Home() {
   return (
     <div className="space-y-12">
-      <JsonLd data={[softwareAppLd(), faqLd(HOME_FAQ)]} />
+      <JsonLd data={[softwareAppLd(), organizationLd(), websiteLd(), faqLd(HOME_FAQ)]} />
 
       <section className="space-y-4">
         <span className="inline-block rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">
