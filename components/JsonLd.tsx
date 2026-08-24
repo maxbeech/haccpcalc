@@ -33,6 +33,24 @@ export function softwareAppLd() {
   };
 }
 
+export function organizationLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: SITE.name,
+    url: SITE.url,
+  };
+}
+
+export function websiteLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: SITE.name,
+    url: SITE.url,
+  };
+}
+
 export function faqLd(items: QA[]) {
   return {
     "@context": "https://schema.org",

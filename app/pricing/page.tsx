@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { PricingCta } from "@/components/PricingCta";
+import { JsonLd, breadcrumbLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -26,6 +27,13 @@ const PRO = [
 export default function Pricing() {
   return (
     <div className="space-y-8">
+      <JsonLd
+        data={breadcrumbLd([
+          { name: "Home", path: "/" },
+          { name: "Pricing", path: "/pricing" },
+        ])}
+      />
+
       <section className="space-y-3 text-center">
         <h1 className="text-3xl font-bold tracking-tight text-slate-900">Simple pricing</h1>
         <p className="mx-auto max-w-xl text-lg text-slate-600">

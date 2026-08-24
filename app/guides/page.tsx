@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { POSTS } from "@/lib/posts";
+import { JsonLd, breadcrumbLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "HACCP & Food Safety Guides",
@@ -12,6 +13,13 @@ export const metadata: Metadata = {
 export default function GuidesIndex() {
   return (
     <div className="space-y-8">
+      <JsonLd
+        data={breadcrumbLd([
+          { name: "Home", path: "/" },
+          { name: "Guides", path: "/guides" },
+        ])}
+      />
+
       <section className="space-y-3">
         <h1 className="text-3xl font-bold tracking-tight text-slate-900">HACCP &amp; food safety guides</h1>
         <p className="max-w-2xl text-lg text-slate-600">

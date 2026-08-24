@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { JsonLd, breadcrumbLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Methodology & Sources",
@@ -11,6 +12,13 @@ export const metadata: Metadata = {
 export default function Methodology() {
   return (
     <div className="space-y-8">
+      <JsonLd
+        data={breadcrumbLd([
+          { name: "Home", path: "/" },
+          { name: "Methodology", path: "/methodology" },
+        ])}
+      />
+
       <section className="space-y-3">
         <h1 className="text-3xl font-bold tracking-tight text-slate-900">Methodology &amp; sources</h1>
         <p className="max-w-2xl text-lg text-slate-600">

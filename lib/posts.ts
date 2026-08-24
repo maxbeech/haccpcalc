@@ -144,10 +144,10 @@ export const POSTS: Post[] = [
 const WEEK2_POSTS: Post[] = [
   {
     slug: "haccp-plan-template",
-    title: "How to Use a HACCP Plan Template",
+    title: "How to Use a HACCP Plan Template (Restaurant Quick-Start)",
     description:
-      "A HACCP plan template gives your food safety system a starting framework. Learn what each section must contain and how to adapt it to your kitchen.",
-    updated: "2026-06-20",
+      "A HACCP plan template gives your food safety system a starting framework. What each section must contain, a 4-step restaurant build process, and how to adapt it to your kitchen.",
+    updated: "2026-07-21",
     sections: [
       {
         heading: "What a HACCP plan template contains",
@@ -156,28 +156,6 @@ const WEEK2_POSTS: Post[] = [
           "HACCPCalc generates all seven sections from your menu input, so you can start with a pre-filled template rather than a blank page.",
         ],
       },
-      {
-        heading: "How to adapt it to your kitchen",
-        body: [
-          "Fill in your specific menu items, process steps, and CCPs. A generic template lists cooking as a CCP — your version should name the dish, the required internal temperature, and who checks it with which thermometer.",
-          "Review the hazard analysis for each item. A raw chicken marinade has different hazards from a shelf-stable vinegar dressing. Do not copy a template blindly; adapt the hazard column to your actual ingredients and process.",
-        ],
-      },
-      {
-        heading: "Update whenever the menu changes",
-        body: [
-          "The plan is a living document. Any time a new menu item, supplier, or process step is added, revisit the hazard analysis and CCP table. Inspectors check that the written plan matches what is actually happening in the kitchen.",
-        ],
-      },
-    ],
-  },
-  {
-    slug: "haccp-plan-for-restaurants",
-    title: "HACCP for Restaurants: A Quick-Start Guide",
-    description:
-      "How to build a HACCP plan for your restaurant, from process flow diagrams and hazard analysis to CCPs, critical limits, and daily temperature logs.",
-    updated: "2026-06-20",
-    sections: [
       {
         heading: "Step 1: Map your process flow",
         body: [
@@ -200,6 +178,19 @@ const WEEK2_POSTS: Post[] = [
         heading: "Step 4: Define corrective actions and verify",
         body: [
           "Write down what happens when a limit is missed — recook, rapidly chill, or discard — before the situation arises. Verify the system monthly by reviewing logs and calibrating thermometers. Reassess the full plan at least annually.",
+        ],
+      },
+      {
+        heading: "How to adapt it to your kitchen",
+        body: [
+          "Fill in your specific menu items, process steps, and CCPs. A generic template lists cooking as a CCP — your version should name the dish, the required internal temperature, and who checks it with which thermometer.",
+          "Review the hazard analysis for each item. A raw chicken marinade has different hazards from a shelf-stable vinegar dressing. Do not copy a template blindly; adapt the hazard column to your actual ingredients and process.",
+        ],
+      },
+      {
+        heading: "Update whenever the menu changes",
+        body: [
+          "The plan is a living document. Any time a new menu item, supplier, or process step is added, revisit the hazard analysis and CCP table. Inspectors check that the written plan matches what is actually happening in the kitchen.",
         ],
       },
     ],
