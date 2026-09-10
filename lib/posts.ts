@@ -2,9 +2,22 @@
 // sections rendered as an article with FAQ-style headings — citable, static,
 // and targeting long-tail food-safety search queries.
 
+import type { QA } from "@/lib/faq";
+
 export interface Section {
   heading: string;
   body: string[];
+}
+
+export interface PostTable {
+  caption: string;
+  headers: string[];
+  rows: string[][];
+}
+
+export interface PostLink {
+  text: string;
+  href: string;
 }
 
 export interface Post {
@@ -13,6 +26,10 @@ export interface Post {
   description: string;
   updated: string;
   sections: Section[];
+  table?: PostTable;
+  faq?: QA[];
+  relatedLinks?: PostLink[];
+  sources?: PostLink[];
 }
 
 export const POSTS: Post[] = [
@@ -512,6 +529,139 @@ const WEEK2_POSTS: Post[] = [
   },
 ];
 POSTS.push(...WEEK2_POSTS);
+
+const WEEK3_POSTS: Post[] = [
+  {
+    slug: "what-is-a-haccp-plan",
+    title: "What Is a HACCP Plan? A Plain-English Guide",
+    description:
+      "What is a HACCP plan, who needs one, and what goes inside it? An FDA-sourced answer with a worked example — build yours free with HACCPCalc.",
+    updated: "2026-09-10",
+    sections: [
+      {
+        heading: "What is a HACCP plan?",
+        body: [
+          "A HACCP plan is a written food safety document that maps every step your food goes through — receiving, storing, prepping, cooking, holding, serving — and pins down the exact points where something could go wrong badly enough to make someone sick.",
+          "HACCP stands for Hazard Analysis and Critical Control Points. Rather than inspecting a finished dish and hoping it's safe, the system builds safety into the process itself: identify the hazard, decide where you can actually catch it, set a measurable limit, write down who checks it and how often, and keep the records to prove it happened.",
+          "It isn't a certificate you buy or a course you sit. It's a document specific to your menu, your kitchen and your equipment — which is exactly why two restaurants serving the same dish can have genuinely different HACCP plans.",
+        ],
+      },
+      {
+        heading: "Where the idea came from",
+        body: [
+          "HACCP wasn't dreamed up by a regulator with a clipboard. Pillsbury built it in the 1960s while supplying food for NASA's manned space missions, working alongside the U.S. Army's Natick research labs, because a sick astronaut mid-orbit was not an acceptable outcome and end-product testing alone couldn't guarantee that.",
+          "Dr Howard Bauman, the Pillsbury microbiologist who led the project, later explained the problem that forced the rethink: \"We quickly found by using standard methods of quality control there was absolutely no way we could be assured there wouldn't be a problem.\" Sampling a handful of finished cubes from a batch simply couldn't catch a contamination event buried somewhere earlier in the process.",
+          "So Bauman's team borrowed a reliability-engineering idea called \"modes of failure\", reworked it for food, and built a system that watches the process instead of just the plate. He presented it publicly at the first National Conference for Food Protection in 1971, and it has been the backbone of food safety regulation ever since.",
+        ],
+      },
+      {
+        heading: "Why it still matters, in numbers",
+        body: [
+          "The scale of the problem HACCP was built to solve hasn't gone away. The CDC estimates that foodborne illness sickens around 48 million people in the United States every year, sending roughly 128,000 to hospital and killing about 3,000.",
+          "A more recent CDC analysis, tracking just six major pathogens (Salmonella, Listeria, Campylobacter, C. perfringens, STEC and norovirus), still counts roughly 10 million cases, 53,300 hospitalisations and over 900 deaths a year — and non-typhoidal Salmonella remains the single deadliest culprit.",
+          "There's a genuine bright spot, though. Outbreaks specifically traced back to restaurants fell from 714 in 2017–2019 to just 238 in 2020–2022, according to CDC surveillance data cited by the U.S. Government Accountability Office. Process-based prevention — the whole premise of HACCP — is one of the few levers that moves that number.",
+        ],
+      },
+      {
+        heading: "The seven principles, briefly",
+        body: [
+          "Every HACCP plan, whatever the menu, rests on the same seven principles. They run in order, and skipping one tends to unravel the rest: you can't set a sensible critical limit before you've named the actual hazard and the point where you control it.",
+          "The table below is the shape of it. If you want the full walkthrough with FDA Food Code citations for each step, see the dedicated principles guide linked further down.",
+        ],
+      },
+      {
+        heading: "Who actually needs one",
+        body: [
+          "HACCP is not universally mandatory — but the exceptions are the businesses most people already assume need it. The FDA requires a HACCP plan for juice and seafood processors, and the USDA's Food Safety and Inspection Service requires one for anyone slaughtering or processing meat and poultry.",
+          "For everyone else — the vast majority of restaurants, cafés, food trucks and caterers — a HACCP plan is technically voluntary under the FDA Food Code, but it is the standard your local health inspector will measure you against, and in practice most jurisdictions expect a written plan for any establishment serving TCS (time/temperature control for safety) food.",
+          "Layer on top of that the FDA Food Safety Modernization Act, which requires most food manufacturing facilities to hold a broader written food safety plan built on the same hazard-analysis logic. If you're unsure which bucket you fall into, your state or local health department — not a generic checklist — is the authority to ask.",
+        ],
+      },
+      {
+        heading: "HACCP plan vs a general food safety plan",
+        body: [
+          "People use these terms interchangeably and it causes real confusion. A HACCP plan is narrowly process-specific: it exists to control biological, chemical and physical hazards at the critical control points in your food's journey through the kitchen.",
+          "A food safety management system is the wider umbrella — HACCP sits inside it alongside things like pest control, allergen management, staff hygiene training and supplier verification. Under FSMA, this wider document is usually called a Food Safety Plan, and it explicitly folds HACCP-style hazard analysis in as one component, not the whole thing.",
+          "In a small kitchen the practical difference is often just paperwork structure rather than daily practice — but an inspector, or an auditor for a wholesale contract, will expect you to know which document you're actually required to produce.",
+        ],
+      },
+      {
+        heading: "What's actually inside a written plan",
+        body: [
+          "A complete plan has one section for each principle: a hazard analysis for every process step, a table of critical control points, the critical limits at each one (almost always a temperature and a time), a monitoring procedure naming who checks what and how often, a corrective-action plan for when a limit is missed, a verification schedule, and a record-keeping system.",
+          "For a typical sit-down restaurant, that usually boils down to three or four real CCPs in practice: cooking raw proteins, cooling anything made in batch and held for later, hot- or cold-holding ready-to-eat food, and — if you handle live shellfish — receiving. Everything else in the kitchen matters, but it isn't a CCP unless losing control there could actually make someone ill.",
+        ],
+      },
+      {
+        heading: "Building your first plan in four steps",
+        body: [
+          "Start by mapping the process flow for each menu category — receive, store, prep, cook, hold, serve — and flag anywhere raw and ready-to-eat items could cross paths.",
+          "Next, run a hazard analysis at each step and apply the CCP decision logic: is this the last point where you can actually stop the hazard? Cooking is almost always a CCP for raw meat and poultry; cold holding is usually the CCP for anything served without a cook step.",
+          "Then set the critical limit and monitoring routine for each CCP — a number, a frequency, a named person, a log sheet — followed by the corrective action for when that limit is missed and a schedule for verifying the whole system still works (thermometer calibration, log review, an annual reassessment).",
+          "HACCPCalc automates the first three steps: pick your food type, and it generates the hazard analysis, CCPs and FDA Food Code critical limits as a starting draft, so you're editing rather than starting from a blank page.",
+        ],
+      },
+      {
+        heading: "Mistakes that fail an inspection",
+        body: [
+          "The most common failure isn't a missing document — it's a plan that describes a kitchen that no longer exists. Menus change, suppliers change, a new fryer arrives, and the written hazard analysis doesn't get updated to match. Inspectors check that the plan reflects what's actually happening on the line, not what was true eighteen months ago.",
+          "The second is logs that exist but don't get filled in consistently. A HACCP plan with no corresponding temperature records is, from an inspector's point of view, indistinguishable from having no plan at all — the paperwork is the proof.",
+        ],
+      },
+    ],
+    table: {
+      caption: "The seven HACCP principles at a glance",
+      headers: ["Principle", "What it does", "Restaurant example"],
+      rows: [
+        ["1. Hazard analysis", "List biological, chemical and physical hazards at each process step.", "Salmonella risk in raw chicken at receiving and prep."],
+        ["2. Identify CCPs", "Find the last point where the hazard can actually be controlled.", "Cooking the chicken to the required internal temperature."],
+        ["3. Critical limits", "Set a measurable boundary for each CCP.", "165°F for 1 second (FDA Food Code §3-401.11)."],
+        ["4. Monitoring", "Decide what's measured, how often, and by whom.", "Probe thermometer on every batch, logged by the line cook."],
+        ["5. Corrective actions", "Define what happens when a limit is missed.", "Continue cooking until the limit is reached, or discard."],
+        ["6. Verification", "Confirm the system is actually working.", "Daily thermometer calibration; monthly log review."],
+        ["7. Record-keeping", "Keep the evidence that proves compliance.", "Temperature logs retained and available for inspection."],
+      ],
+    },
+    faq: [
+      {
+        q: "What is a HACCP plan in simple terms?",
+        a: "It's a written document that lists the food safety hazards in your specific menu and process, names the exact points (critical control points) where you catch them, and sets a measurable limit — usually a temperature and time — for each one, with logs to prove it's being followed.",
+      },
+      {
+        q: "Is a HACCP plan legally required?",
+        a: "It's mandatory for FDA-regulated juice and seafood processors and for USDA-regulated meat and poultry facilities. For most restaurants and food service operations it is technically voluntary under the FDA Food Code, but local health departments generally expect a written plan for any business handling TCS food, and FSMA requires a broader food safety plan for most food manufacturers.",
+      },
+      {
+        q: "What's the difference between a HACCP plan and a food safety plan?",
+        a: "A HACCP plan is narrowly focused on hazard analysis and critical control points within the food process itself. A food safety plan (the term used under FSMA) is the broader document that includes HACCP-style hazard analysis alongside pest control, allergen management, sanitation and supplier verification.",
+      },
+      {
+        q: "How long does it take to write a HACCP plan?",
+        a: "A simple, single-menu-category plan can be drafted in an afternoon once you know your process flow. A full-menu restaurant plan with multiple CCPs typically takes a few days to draft properly and should then be reviewed with your local health department before it's treated as final.",
+      },
+      {
+        q: "Do I need a HACCP plan for a food truck or home-based food business?",
+        a: "Most likely, in some form — though the specific CCPs differ from a full kitchen because of limited equipment and shorter hold times. Check your state's cottage food law or mobile vendor rules, since requirements vary significantly by jurisdiction.",
+      },
+    ],
+    relatedLinks: [
+      { text: "The 7 HACCP principles, explained in full", href: "/guides/7-haccp-principles" },
+      { text: "Six real-world critical control point examples", href: "/guides/critical-control-point-examples" },
+      { text: "How to use a HACCP plan template", href: "/guides/haccp-plan-template" },
+      { text: "FDA Food Code cooking temperatures chart", href: "/cooking-temperatures" },
+      { text: "HACCP plan template for chicken and poultry", href: "/haccp-plan-template/chicken" },
+      { text: "How HACCPCalc sources its critical limits", href: "/methodology" },
+    ],
+    sources: [
+      { text: "FDA — Managing Food Safety: A Manual for the Voluntary Use of HACCP Principles", href: "https://www.fda.gov/media/71976/download" },
+      { text: "CDC — Facts About Food Poisoning", href: "https://www.cdc.gov/food-safety/data-research/facts-stats/index.html" },
+      { text: "CDC — Estimates: Burden of Foodborne Illness in the United States", href: "https://www.cdc.gov/food-safety/php/data-research/foodborne-illness-burden/index.html" },
+      { text: "U.S. GAO — Food Safety: Status of Foodborne Illness in the U.S. (GAO-25-107606)", href: "https://www.gao.gov/products/gao-25-107606" },
+      { text: "NASA Spinoff — How the Moon Landing Led to Safer Food for Everyone", href: "https://spinoff.nasa.gov/moon-landing-food-safety" },
+    ],
+  },
+];
+POSTS.push(...WEEK3_POSTS);
 
 export function getPost(slug: string): Post | undefined {
   return POSTS.find((p) => p.slug === slug);
