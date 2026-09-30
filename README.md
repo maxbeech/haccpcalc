@@ -25,6 +25,13 @@ Live: https://haccpcalc.vercel.app
 - Deployed on Vercel (remote build)
 - Stripe `/api/checkout` (env-gated; degrades to a friendly 503 without keys)
 
+## Analytics
+
+GA4 through `lib/openhelm-analytics.tsx`. An unset `NEXT_PUBLIC_GA_MEASUREMENT_ID` means no script and
+no events. Custom events are typed in `lib/analytics-events.ts`; `purchase` is decided by
+`lib/analytics-purchase.ts` from the Stripe session that `/pricing/success` retrieves. There are no
+accounts, so no `oh_user_ref` is sent. Tests: `npm test`.
+
 ## No fabricated data
 
 Every critical limit is drawn from `lib/data/temps.ts`, which cites the exact FDA

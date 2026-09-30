@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { checkoutBody } from "@/lib/stripe-session";
 
 // Stripe Checkout for the HACCPCalc Pro subscription (saved plans, PDF export).
 // Keys come from Vercel env vars (STRIPE_SECRET_KEY, STRIPE_PRICE_ID). When
@@ -18,14 +19,7 @@ export async function POST() {
   }
 
   try {
-    const body = new URLSearchParams({
-      mode: "subscription",
-      "line_items[0][price]": price,
-      "line_items[0][quantity]": "1",
-      success_url: `${base}/pricing?status=success`,
-      cancel_url: `${base}/pricing?status=cancel`,
-      allow_promotion_codes: "true",
-    });
+    const body = checkoutBody(base, price);
     const res = await fetch("https://api.stripe.com/v1/checkout/sessions", {
       method: "POST",
       headers: { Authorization: `Bearer ${secret}`, "Content-Type": "application/x-www-form-urlencoded" },
