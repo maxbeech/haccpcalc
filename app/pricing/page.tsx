@@ -1,5 +1,7 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import { PricingCta } from "@/components/PricingCta";
+import PricingTracker from "@/components/analytics/PricingTracker";
 import { JsonLd, breadcrumbLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
@@ -27,6 +29,9 @@ const PRO = [
 export default function Pricing() {
   return (
     <div className="space-y-8">
+      <Suspense fallback={null}>
+        <PricingTracker />
+      </Suspense>
       <JsonLd
         data={breadcrumbLd([
           { name: "Home", path: "/" },

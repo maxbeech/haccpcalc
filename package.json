@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "tsx test/haccp.test.mts"
+    "test": "tsx test/haccp.test.mts && tsx test/analytics.test.mts && tsx test/analytics-track.test.mts"
   },
   "dependencies": {
     "next": "16.2.9",

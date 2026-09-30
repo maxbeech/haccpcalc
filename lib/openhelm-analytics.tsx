@@ -51,6 +51,9 @@
 import { Suspense, useEffect, useRef } from "react";
 import Script from "next/script";
 import { usePathname, useSearchParams } from "next/navigation";
+import { USER_PROPERTY_PLAN, USER_PROPERTY_REF, type AnalyticsPlan } from "./openhelm-analytics-mp";
+
+export { userRefFor, type AnalyticsPlan } from "./openhelm-analytics-mp";
 
 /** The one place the measurement id is read. */
 export const MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim() || "";
@@ -62,13 +65,27 @@ type GtagArgs =
   | ["js", Date]
   | ["config", string, Record<string, unknown>?]
   | ["event", string, Record<string, unknown>?]
-  | ["set", Record<string, unknown>];
+  | ["set", Record<string, unknown>]
+  | ["set", "user_properties", Record<string, unknown>];
 
 declare global {
   interface Window {
     dataLayer?: unknown[];
     gtag?: (...args: GtagArgs) => void;
   }
+}
+
+/**
+ * Queue one gtag command. gtag.js only acts on `arguments` objects in
+ * `dataLayer`; a plain array is silently ignored, so every command goes through
+ * here. Queued commands are drained in order when the tag loads.
+ * (Local fix: the shared copy pushed plain arrays, so no event was ever sent.)
+ */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function gtag(..._args: GtagArgs): void {
+  window.dataLayer = window.dataLayer || [];
+  // eslint-disable-next-line prefer-rest-params
+  window.dataLayer.push(arguments);
 }
 
 /**
@@ -82,10 +99,24 @@ declare global {
 export function track(event: string, params: Record<string, unknown> = {}): boolean {
   if (!analyticsEnabled) return false;
   if (typeof window === "undefined") return false;
-  window.dataLayer = window.dataLayer || [];
-  // Push the raw argument tuple rather than calling window.gtag, so events
-  // fired before gtag.js finishes loading still land in the queue it drains.
-  window.dataLayer.push(["event", event, params]);
+  // Queue rather than call window.gtag, so events fired before gtag.js
+  // finishes loading still land in the queue it drains.
+  gtag("event", event, params);
+  return true;
+}
+
+/**
+ * Say who (pseudonymously) and on which plan every later event belongs to.
+ *
+ * Call it as soon as the product knows the user, and again right after their
+ * plan changes (a confirmed payment). `userRef` comes from `userRefFor`, best
+ * computed on the server so the raw id never reaches the browser. Respect the
+ * product's consent rules: call it only where you'd send events.
+ */
+export function identify({ userRef, plan }: { userRef: string; plan: AnalyticsPlan }): boolean {
+  if (!analyticsEnabled) return false;
+  if (typeof window === "undefined") return false;
+  gtag("set", "user_properties", { [USER_PROPERTY_REF]: userRef, [USER_PROPERTY_PLAN]: plan });
   return true;
 }
 
@@ -94,12 +125,7 @@ export function track(event: string, params: Record<string, unknown> = {}): bool
 export function trackPageView(url: string): boolean {
   if (!analyticsEnabled) return false;
   if (typeof window === "undefined") return false;
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push([
-    "event",
-    "page_view",
-    { page_path: url, page_location: window.location.href, page_title: document.title },
-  ]);
+  gtag("event", "page_view", { page_path: url, page_location: window.location.href, page_title: document.title });
   return true;
 }
 

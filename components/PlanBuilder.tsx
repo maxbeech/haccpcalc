@@ -1,11 +1,12 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { buildPlan, ProcessCategory, StepId, STEP_LABELS, STEP_ORDER } from "@/lib/calc/haccp";
 import { buildLogSheet, LogPointId } from "@/lib/calc/templog";
 import { FOOD_TYPES } from "@/lib/data/foodTypes";
 import { COOK_RULES, CookCategory } from "@/lib/data/temps";
 import { PlanView } from "@/components/PlanView";
+import { trackEvent } from "@/lib/analytics-events";
 
 const COOK_CATS = Object.values(COOK_RULES);
 
@@ -29,9 +30,18 @@ export function PlanBuilder({ initialSlug = "chicken" }: { initialSlug?: string 
   const [cookCategory, setCookCategory] = useState<CookCategory | "">(preset.cookCategory ?? "");
   const [steps, setSteps] = useState<StepId[]>(preset.steps);
 
+  // First change by the visitor, not the seeded plan. Reads the process the change produced.
+  const used = useRef(false);
+  function markUsed(nextProcess: ProcessCategory) {
+    if (used.current) return;
+    used.current = true;
+    trackEvent("calculator_used", { process: nextProcess });
+  }
+
   function applyPreset(slug: string) {
     const f = FOOD_TYPES.find((x) => x.slug === slug);
     if (!f) return;
+    markUsed(f.process);
     setFoodName(f.name);
     setProcess(f.process);
     setCookCategory(f.cookCategory ?? "");
@@ -39,6 +49,7 @@ export function PlanBuilder({ initialSlug = "chicken" }: { initialSlug?: string 
   }
 
   function toggleStep(s: StepId) {
+    markUsed(process);
     setSteps((prev) => (prev.includes(s) ? prev.filter((x) => x !== s) : [...prev, s]));
   }
 
@@ -72,7 +83,10 @@ export function PlanBuilder({ initialSlug = "chicken" }: { initialSlug?: string 
           <input
             className="mt-1 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-slate-900"
             value={foodName}
-            onChange={(e) => setFoodName(e.target.value)}
+            onChange={(e) => {
+              markUsed(process);
+              setFoodName(e.target.value);
+            }}
             placeholder="e.g. Grilled chicken breast"
           />
         </label>
@@ -82,7 +96,10 @@ export function PlanBuilder({ initialSlug = "chicken" }: { initialSlug?: string 
           <select
             className="mt-1 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-slate-900"
             value={process}
-            onChange={(e) => setProcess(e.target.value as ProcessCategory)}
+            onChange={(e) => {
+              markUsed(e.target.value as ProcessCategory);
+              setProcess(e.target.value as ProcessCategory);
+            }}
           >
             <option value="no-cook">Process 1 — No cook (ready-to-eat)</option>
             <option value="same-day">Process 2 — Same-day cook & serve</option>
@@ -95,7 +112,10 @@ export function PlanBuilder({ initialSlug = "chicken" }: { initialSlug?: string 
           <select
             className="mt-1 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-slate-900"
             value={cookCategory}
-            onChange={(e) => setCookCategory(e.target.value as CookCategory | "")}
+            onChange={(e) => {
+              markUsed(process);
+              setCookCategory(e.target.value as CookCategory | "");
+            }}
           >
             <option value="">— none / not cooked —</option>
             {COOK_CATS.map((c) => (
@@ -137,7 +157,10 @@ export function PlanBuilder({ initialSlug = "chicken" }: { initialSlug?: string 
           <h2 className="text-lg font-semibold text-slate-900">Temperature log sheet</h2>
           <button
             type="button"
-            onClick={() => window.print()}
+            onClick={() => {
+              trackEvent("plan_print_started", {});
+              window.print();
+            }}
             className="rounded-lg bg-slate-900 px-3 py-1.5 text-sm font-medium text-white hover:bg-slate-700 print:hidden"
           >
             Print / Save as PDF
