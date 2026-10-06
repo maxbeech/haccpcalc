@@ -64,7 +64,7 @@ Sentry (`@sentry/nextjs`) captures errors, console output as logs, and user feed
 one project. The "Send feedback" link in the header and footer opens Sentry's form; each
 submission becomes a User Feedback item. Browser events go through a randomised tunnel route
 so ad blockers do not drop them. Server code reports handled failures with
-`captureServerError` (`lib/observability.ts`); shared options live in `lib/sentry-options.ts`.
+`captureServerError` (`lib/observability.ts`); shared options live in `lib/sentry-options.ts` and the fail-closed scrubber in `lib/sentry-scrub.ts`.
 
 ## Follow-ups
 

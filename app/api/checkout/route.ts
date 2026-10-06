@@ -31,7 +31,8 @@ export async function POST() {
       captureServerMessage("Stripe checkout session was rejected", {
         scope: "checkout",
         status: res.status,
-        stripeMessage: session?.error?.message,
+        stripeCode: session?.error?.code,
+        stripeType: session?.error?.type,
       });
       return NextResponse.json({ error: session?.error?.message ?? "Stripe error" }, { status: 502 });
     }
