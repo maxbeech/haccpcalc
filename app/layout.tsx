@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
 import { SITE } from "@/lib/site";
+import { FeedbackButton } from "@/components/FeedbackButton";
 import { OpenHelmAnalytics } from "../lib/openhelm-analytics";
 
 export const metadata: Metadata = {
@@ -26,6 +27,7 @@ function Header() {
           <Link href="/cooking-temperatures" className="hover:text-slate-900">Temperatures</Link>
           <Link href="/states" className="hidden hover:text-slate-900 sm:inline">States</Link>
           <Link href="/guides" className="hidden hover:text-slate-900 sm:inline">Guides</Link>
+          <FeedbackButton className="hidden sm:inline" />
           <Link href="/pricing" className="rounded-lg bg-slate-900 px-3 py-1.5 font-medium text-white hover:bg-slate-700">Pro</Link>
         </nav>
       </div>
@@ -45,6 +47,7 @@ function Footer() {
           <Link href="/guides" className="hover:text-slate-900">Guides</Link>
           <Link href="/methodology" className="hover:text-slate-900">Methodology</Link>
           <Link href="/pricing" className="hover:text-slate-900">Pro / PDF</Link>
+          <FeedbackButton />
         </div>
         <p className="mt-4 max-w-3xl text-xs text-slate-400">
           {SITE.name} produces planning drafts using the FDA Food Code 2022 model code. States and

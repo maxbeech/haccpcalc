@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { checkoutBody } from "@/lib/stripe-session";
+import { captureServerError, captureServerMessage } from "@/lib/observability";
 
 // Stripe Checkout for the HACCPCalc Pro subscription (saved plans, PDF export).
 // Keys come from Vercel env vars (STRIPE_SECRET_KEY, STRIPE_PRICE_ID). When
@@ -27,10 +28,16 @@ export async function POST() {
     });
     const session = await res.json();
     if (!res.ok) {
+      captureServerMessage("Stripe checkout session was rejected", {
+        scope: "checkout",
+        status: res.status,
+        stripeMessage: session?.error?.message,
+      });
       return NextResponse.json({ error: session?.error?.message ?? "Stripe error" }, { status: 502 });
     }
     return NextResponse.json({ url: session.url });
-  } catch {
+  } catch (err) {
+    captureServerError(err, { scope: "checkout" });
     return NextResponse.json({ error: "Could not reach Stripe." }, { status: 502 });
   }
 }

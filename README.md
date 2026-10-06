@@ -44,7 +44,7 @@ temperature-log generator (`lib/calc/templog.ts`) read from that single source. 
 ```bash
 npm install
 npm run dev      # http://localhost:3000
-npm test         # engine tests (38 assertions)
+npm test         # engine tests (38 assertions) + Sentry/feedback unit tests (vitest)
 npm run build
 ```
 
@@ -55,6 +55,16 @@ npm run build
 | `STRIPE_SECRET_KEY` | Stripe Pro checkout (absent → 503 "launching shortly") |
 | `STRIPE_PRICE_ID` | Stripe price for the Pro subscription |
 | `NEXT_PUBLIC_SITE_URL` | Canonical base URL for checkout redirects |
+| `NEXT_PUBLIC_SENTRY_DSN` / `SENTRY_DSN` | Sentry project `haccpcalc_web` (org `maxed-labs`). Unset = nothing is reported |
+| `SENTRY_AUTH_TOKEN` | Build-time source map upload only |
+
+## Error reporting and feedback
+
+Sentry (`@sentry/nextjs`) captures errors, console output as logs, and user feedback in
+one project. The "Send feedback" link in the header and footer opens Sentry's form; each
+submission becomes a User Feedback item. Browser events go through a randomised tunnel route
+so ad blockers do not drop them. Server code reports handled failures with
+`captureServerError` (`lib/observability.ts`); shared options live in `lib/sentry-options.ts`.
 
 ## Follow-ups
 

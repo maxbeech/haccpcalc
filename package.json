@@ -7,22 +7,29 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "tsx test/haccp.test.mts && tsx test/analytics.test.mts && tsx test/analytics-track.test.mts"
+    "test": "tsx test/haccp.test.mts && tsx test/analytics.test.mts && tsx test/analytics-track.test.mts && vitest run",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@sentry/nextjs": "^10.76.0",
     "next": "16.2.9",
     "react": "19.2.4",
     "react-dom": "19.2.4"
   },
   "devDependencies": {
+    "@playwright/test": "^1.63.0",
     "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
+    "@testing-library/dom": "^10.4.2",
+    "@testing-library/react": "^16.3.3",
+    "@types/node": "^22.20.5",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.9",
+    "jsdom": "^30.1.2",
     "tailwindcss": "^4",
     "tsx": "^4.22.4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^5.0.3"
   }
 }
