@@ -1,4 +1,4 @@
-import { beforeBreadcrumb, beforeSend, beforeSendTransaction, scrubLog } from "@/lib/sentry-scrub";
+import { beforeBreadcrumb, beforeSend, beforeSendTransaction, scrubLog } from "./sentry-scrub";
 
 /**
  * One source of truth for the Sentry options shared by the browser, server
@@ -10,7 +10,7 @@ export const SENTRY_PROJECT = "haccpcalc_web";
 /** Console levels forwarded to Sentry Logs. */
 export const CONSOLE_LOG_LEVELS = ["log", "info", "warn", "error"] as const;
 
-export { scrubText, scrubLog } from "@/lib/sentry-scrub";
+export { scrubText, scrubLog } from "./sentry-scrub";
 
 export function sentryDsn(): string | undefined {
   return process.env.SENTRY_DSN || process.env.NEXT_PUBLIC_SENTRY_DSN || undefined;
