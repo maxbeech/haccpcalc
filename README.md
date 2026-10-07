@@ -66,6 +66,8 @@ submission becomes a User Feedback item. Browser events go through a randomised 
 so ad blockers do not drop them. Server code reports handled failures with
 `captureServerError` (`lib/observability.ts`); shared options live in `lib/sentry-options.ts` and the fail-closed scrubber in `lib/sentry-scrub.ts`.
 
+The Sentry scrubber (`lib/sentry-scrub.ts`) redacts secrets of any length, backs up to a clean boundary when it truncates, and fails closed; its regression tests are in `test/scrub-hardening.test.ts`.
+
 ## Follow-ups
 
 - Custom domain `haccpcalc.com` (DNS)
