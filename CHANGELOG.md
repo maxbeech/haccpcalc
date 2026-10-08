@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-10-08: Machine-readable site surfaces
+
+- **Robots.** `app/robots.ts` now names GPTBot, ClaudeBot, PerplexityBot, Google-Extended and CCBot explicitly with `Allow: /`, so the AI-crawler policy is deliberate rather than implied.
+- **llms.txt.** `public/llms.txt` lists the guides and states indexes and the sitemap, states that there is no public API, and no longer describes Pro as available: its features are not built.
+- **Breadcrumbs.** `/guides`, `/states`, `/methodology`, `/pricing` and `/cooking-temperatures` now render the visible breadcrumb trail that their BreadcrumbList JSON-LD describes (`components/Breadcrumbs.tsx`).
+- **Article schema.** Guides no longer emit `datePublished`, which was set to the last-updated date; the publish date is not stored. `dateModified` is unchanged.
+- **Sitemap.** Guide entries use each post's `updated` date as `lastModified` instead of the build time.
+- **Lint.** Escaped five straight quotes in `app/methodology/page.tsx` so `npm run lint` reports no errors.
+- **Tests.** `test/geo-surfaces.test.ts` covers the crawler rules and the guide sitemap dates.
+
 ## 2026-10-07: Sentry scrubber security pass
 
 - **Long secrets.** JWTs, bearer tokens, vendor keys (`sk_`, `whsec_`, `hlm_sk_`, `sntrys_`) and `key=value` secrets of any length are now redacted whole. The old bounded patterns left the tail of anything longer than their limit.

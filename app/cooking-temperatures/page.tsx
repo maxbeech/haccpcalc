@@ -3,6 +3,12 @@ import Link from "next/link";
 import { COOK_RULE_LIST, HOLDING, COOLING, REHEATING, DATE_MARKING, DANGER_ZONE, ftoC } from "@/lib/data/temps";
 import { JsonLd, faqLd, breadcrumbLd } from "@/components/JsonLd";
 import { COOK_FAQ } from "@/lib/faq";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+
+const TRAIL = [
+  { name: "Home", path: "/" },
+  { name: "Cooking temperatures", path: "/cooking-temperatures" },
+];
 
 export const metadata: Metadata = {
   title: "FDA Food Code Cooking Temperatures Chart (2022)",
@@ -17,12 +23,10 @@ export default function CookingTemps() {
       <JsonLd
         data={[
           faqLd(COOK_FAQ),
-          breadcrumbLd([
-            { name: "Home", path: "/" },
-            { name: "Cooking temperatures", path: "/cooking-temperatures" },
-          ]),
+          breadcrumbLd(TRAIL),
         ]}
       />
+      <Breadcrumbs trail={TRAIL} />
 
       <section className="space-y-3">
         <h1 className="text-3xl font-bold tracking-tight text-slate-900">FDA Food Code cooking temperatures (2022)</h1>

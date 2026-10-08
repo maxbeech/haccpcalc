@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { JsonLd, breadcrumbLd } from "@/components/JsonLd";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+
+const TRAIL = [
+  { name: "Home", path: "/" },
+  { name: "Methodology", path: "/methodology" },
+];
 
 export const metadata: Metadata = {
   title: "Methodology & Sources",
@@ -12,12 +18,8 @@ export const metadata: Metadata = {
 export default function Methodology() {
   return (
     <div className="space-y-8">
-      <JsonLd
-        data={breadcrumbLd([
-          { name: "Home", path: "/" },
-          { name: "Methodology", path: "/methodology" },
-        ])}
-      />
+      <JsonLd data={breadcrumbLd(TRAIL)} />
+      <Breadcrumbs trail={TRAIL} />
 
       <section className="space-y-3">
         <h1 className="text-3xl font-bold tracking-tight text-slate-900">Methodology &amp; sources</h1>
@@ -40,7 +42,7 @@ export default function Methodology() {
           <li>§3-501.16 — cold and hot holding temperatures</li>
           <li>§3-403.11 — reheating for hot holding</li>
           <li>§3-501.17 — ready-to-eat TCS date marking</li>
-          <li>Annex 4 — the food establishment "process approach" to HACCP</li>
+          <li>Annex 4 — the food establishment &quot;process approach&quot; to HACCP</li>
         </ul>
       </section>
 
@@ -60,7 +62,7 @@ export default function Methodology() {
           For each state we list the regulatory agency that enforces retail food rules and note that the state
           bases its code on the FDA Food Code. Because states update their adopted edition over time, we point
           you to the agency to confirm the exact edition and local amendments rather than hard-coding a number
-          that could go stale. Source of record: the FDA's "Adoption of the FDA Food Code by State."
+          that could go stale. Source of record: the FDA&apos;s &quot;Adoption of the FDA Food Code by State.&quot;
         </p>
       </section>
 

@@ -3,6 +3,12 @@ import type { Metadata } from "next";
 import { PricingCta } from "@/components/PricingCta";
 import PricingTracker from "@/components/analytics/PricingTracker";
 import { JsonLd, breadcrumbLd } from "@/components/JsonLd";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+
+const TRAIL = [
+  { name: "Home", path: "/" },
+  { name: "Pricing", path: "/pricing" },
+];
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -32,12 +38,8 @@ export default function Pricing() {
       <Suspense fallback={null}>
         <PricingTracker />
       </Suspense>
-      <JsonLd
-        data={breadcrumbLd([
-          { name: "Home", path: "/" },
-          { name: "Pricing", path: "/pricing" },
-        ])}
-      />
+      <JsonLd data={breadcrumbLd(TRAIL)} />
+      <Breadcrumbs trail={TRAIL} />
 
       <section className="space-y-3 text-center">
         <h1 className="text-3xl font-bold tracking-tight text-slate-900">Simple pricing</h1>

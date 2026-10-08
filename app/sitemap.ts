@@ -16,6 +16,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
   for (const f of FOOD_TYPES) urls.push({ url: `${SITE.url}/haccp-plan-template/${f.slug}`, lastModified: now, priority: 0.8 });
   for (const s of STATES) urls.push({ url: `${SITE.url}/food-safety/${s.slug}`, lastModified: now, priority: 0.6 });
-  for (const p of POSTS) urls.push({ url: `${SITE.url}/guides/${p.slug}`, lastModified: now, priority: 0.6 });
+  for (const p of POSTS) urls.push({ url: `${SITE.url}/guides/${p.slug}`, lastModified: new Date(p.updated), priority: 0.6 });
   return urls;
 }

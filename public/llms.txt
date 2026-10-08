@@ -37,9 +37,15 @@ Site: https://haccpcalc.vercel.app
 - /cooking-temperatures      Full FDA Food Code temperature reference
 - /haccp-plan-template/[food]  Per-food HACCP plan templates
 - /food-safety/[state]       Per-state food code & permit reference (50 states)
+- /guides                    Index of HACCP guides
 - /guides/[slug]             HACCP guides (7 principles, danger zone, cooling rule, HACCP vs ServSafe)
+- /states                    Index of the 50-state food safety references
 - /methodology              Sources and how limits are derived
-- /pricing                  Free tier and Pro
+- /pricing                  Free tier ($0). A $29/mo Pro tier is shown on this page, but its features (saved plans, PDF export, team sharing) are not built yet.
+
+## Sitemap and API
+- Sitemap: https://haccpcalc.vercel.app/sitemap.xml
+- Public API: none. The only route under app/api is the checkout endpoint, which is not a data API.
 
 ## Disclaimer
 HACCPCalc produces planning drafts using the FDA Food Code 2022 model code. States and local jurisdictions adopt the Food Code with amendments. Always confirm your HACCP plan, critical limits and permit requirements with your local regulatory authority and a certified food protection manager.

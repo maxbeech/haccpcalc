@@ -26,7 +26,6 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
     "@type": "Article",
     headline: p.title,
     description: p.description,
-    datePublished: p.updated,
     dateModified: p.updated,
     author: { "@type": "Organization", name: SITE.name },
     publisher: { "@type": "Organization", name: SITE.name },

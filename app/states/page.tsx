@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { STATES } from "@/lib/data/states";
 import { JsonLd, breadcrumbLd } from "@/components/JsonLd";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+
+const TRAIL = [
+  { name: "Home", path: "/" },
+  { name: "Food safety by state", path: "/states" },
+];
 
 export const metadata: Metadata = {
   title: "Food Safety Requirements by State",
@@ -13,12 +19,8 @@ export const metadata: Metadata = {
 export default function StatesIndex() {
   return (
     <div className="space-y-8">
-      <JsonLd
-        data={breadcrumbLd([
-          { name: "Home", path: "/" },
-          { name: "Food safety by state", path: "/states" },
-        ])}
-      />
+      <JsonLd data={breadcrumbLd(TRAIL)} />
+      <Breadcrumbs trail={TRAIL} />
 
       <section className="space-y-3">
         <h1 className="text-3xl font-bold tracking-tight text-slate-900">Food safety requirements by state</h1>
