@@ -33,15 +33,14 @@ Site: https://haccpcalc.vercel.app
 - Process 3 (complex): cook, cool, cold-hold, reheat, hot-hold. CCPs: cooking, cooling, reheating, hot holding.
 
 ## Pages
-- /                          HACCP plan builder + cooking temperature chart + FAQ
-- /cooking-temperatures      Full FDA Food Code temperature reference
-- /haccp-plan-template/[food]  Per-food HACCP plan templates
-- /food-safety/[state]       Per-state food code & permit reference (50 states)
-- /guides                    Index of HACCP guides
-- /guides/[slug]             HACCP guides (7 principles, danger zone, cooling rule, HACCP vs ServSafe)
-- /states                    Index of the 50-state food safety references
-- /methodology              Sources and how limits are derived
-- /pricing                  Free tier ($0). A $29/mo Pro tier is shown on this page, but its features (saved plans, PDF export, team sharing) are not built yet.
+- [HACCP plan builder, cooking temperature chart and FAQ](https://haccpcalc.vercel.app/): the home page.
+- [Cooking temperatures](https://haccpcalc.vercel.app/cooking-temperatures): full FDA Food Code temperature reference.
+- [HACCP plan templates](https://haccpcalc.vercel.app/haccp-plan-template/chicken): per-food templates (12 foods, e.g. /haccp-plan-template/ground-beef).
+- [State food safety references](https://haccpcalc.vercel.app/food-safety/california): per-state food code and permit reference (50 states, e.g. /food-safety/california).
+- [States index](https://haccpcalc.vercel.app/states): index of the 50-state references.
+- [Guides](https://haccpcalc.vercel.app/guides): index of HACCP guides (7 principles, danger zone, cooling rule, HACCP vs ServSafe).
+- [Methodology](https://haccpcalc.vercel.app/methodology): sources and how limits are derived.
+- [Pricing](https://haccpcalc.vercel.app/pricing): Free tier ($0). A $29/mo Pro tier is shown on this page, but its features (saved plans, PDF export, team sharing) are not built yet.
 
 ## Sitemap and API
 - Sitemap: https://haccpcalc.vercel.app/sitemap.xml

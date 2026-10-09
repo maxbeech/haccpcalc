@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-10-09: llms.txt links
+
+- **llms.txt.** The Pages section of `public/llms.txt` now lists each page as an absolute markdown link to `https://haccpcalc.vercel.app`, the format the llms.txt convention expects. Page descriptions and facts are unchanged.
+
 ## 2026-10-08: Machine-readable site surfaces
 
 - **Robots.** `app/robots.ts` now names GPTBot, ClaudeBot, PerplexityBot, Google-Extended and CCBot explicitly with `Allow: /`, so the AI-crawler policy is deliberate rather than implied.
