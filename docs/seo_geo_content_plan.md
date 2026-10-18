@@ -1,66 +1,172 @@
-# HACCPCalc — SEO/GEO Content Production Prioritisation Matrix
+# HACCPCalc — SEO/GEO Content Plan
 
-Last refreshed: 2026-07-12. Weekly Content Budget (Growth Profile): **2/week**, Prune First: false (new-site default — GSC unavailable this run, see below).
+Last refreshed: 2026-10-18. Weekly Content Budget 1, Prune First true (Search Console not connected; budget held).
 
-**Volumes unverified — Google Ads re-auth needed.** Google SEO Tools (Search Console) auth is expired and no Google Ads Keyword Planner connection exists in this project, so no live search-volume or click data backs this pass. Terms below are judgement-ranked from the site's own programmatic surface (`/haccp-plan-template/[food-type]`, `/food-safety/[state]`, `/cooking-temperatures`, `/guides/[slug]`) and the live competitive set (FoodDocs, FoodReady AI, SafetyCulture, Xenia, Zip HACCP, Operandio). Re-run once Search Console and Keyword Planner are reconnected to attach real numbers.
+Method: Google Keyword Planner, average monthly US searches, 12 months to Sep 2026. "10" is the Planner floor. "unverified" means no Planner volume. Keyword Opportunities (GSC) is empty, so nothing was merged from it. Each term traces to a route, post title, food-type label or named competitor (FoodDocs, FoodReady AI, SafetyCulture).
 
-## 1. The Authority Pillars
+## 1. Authority Pillars
 
-- **HACCP plan builder** — Entity Category: *Food Safety Compliance Tool*. Head term for the whole site; homepage.
-- **HACCP plan template** — Entity Category: *Regulatory Document Template*. Anchors `/haccp-plan-template/[food-type]` across 12 foods.
-- **Food safety temperature chart** — Entity Category: *FDA Food Code Reference Data*. Anchors `/cooking-temperatures`, the single highest-traffic reference asset for any food-safety site.
-- **Critical control points (CCP)** — Entity Category: *HACCP Methodology Concept*. Core educational pillar tying the 7-principle system together.
-- **Temperature log sheet** — Entity Category: *Printable Compliance Record*. Anchors the temperature log generator; recurring, habitual-use query.
-- **FDA Food Code minimum cooking temperatures** — Entity Category: *Regulatory Data Set*. The authoritative-citation pillar that differentiates the site from AI-generated competitors.
+- critical control points | 135000/LOW | Entity: HACCP Methodology Concept
+- haccp | 22200/LOW | Entity: Food Safety Compliance Tool
+- food safety temperature chart | 390/HIGH | Entity: FDA Food Code Reference Data
+- haccp plan template | 390/LOW | Entity: Regulatory Document Template
+- temperature log sheet | 210/MEDIUM | Entity: Printable Compliance Record
+- hazard analysis critical control point | 880/LOW | Entity: HACCP Methodology Concept
+- haccp plan builder | 10/MEDIUM | Entity: Food Safety Compliance Tool (brand head term)
 
-## 2. The "Zero-Click" & GEO Champions
+## 2. Zero-Click & GEO Champions
 
-- **"What is a HACCP plan?"** — Connected Entities: 7 HACCP principles, Critical Control Points, FDA Food Code 2022, Codex Alimentarius.
-- **"How do I write a HACCP plan for my restaurant?"** — Connected Entities: process categories (no-cook / same-day cook / complex), critical limits, monitoring procedures, corrective actions.
-- **"What temperature kills bacteria in food?"** — Connected Entities: FDA Food Code 2022 minimum internal temperatures, danger zone (41-135°F), pathogen reduction.
-- **"HACCP vs food safety plan — what's the difference?"** — Connected Entities: HACCP (process-specific, CCP-based), broader Food Safety Management System, FSMA.
-- **"HACCPCalc vs FoodDocs"** — Connected Entities: FoodDocs (AI-generated, subscription), free HACCP builder, FDA Food Code citation transparency.
-- **"How long can food sit in the danger zone?"** — Connected Entities: 2-hour rule, 4-hour rule, cumulative time tracking.
-- **"What is the correct temperature for cooling food?"** — Connected Entities: 2-hour/4-hour cooling method, ice bath, blast chiller.
+- what is a haccp plan | 720/LOW | Connected: 7 principles, CCPs, FDA Food Code 2022, Codex
+- haccp stand for | 2900/LOW | Connected: hazard analysis and critical control points, Codex
+- haccp is | 4400/LOW | Connected: HACCP principles, food safety management system
+- what temperature kills bacteria in food | 390/LOW | Connected: FDA Food Code 2022 minimum temperatures, danger zone 41-135°F
+- danger zone temperature range | 720/LOW | Connected: 2-hour/4-hour rule, cumulative time tracking
+- how to write a haccp plan | 70/LOW | Connected: process categories, critical limits, monitoring, corrective actions
+- haccp vs food safety plan | 10/LOW | Connected: HACCP, food safety management system, FSMA
+- haccp vs servsafe | unverified | Connected: ServSafe, HACCP principles
+- how long can food sit in the danger zone | unverified | Connected: 2-hour rule, 4-hour rule
+- what is the correct temperature for cooling food | unverified | Connected: two-stage cooling rule, ice bath
+- haccpcalc vs fooddocs | unverified | Connected: FoodDocs (subscription), FDA Food Code citations
 
-## 3. The High-Intent "Closers"
+## 3. High-Intent Closers
 
-- **"Best HACCP software for small restaurants"** — Attribute Entities: free tier, no subscription lock-in, per-food-type templates.
-- **"HACCP plan builder pricing"** — Attribute Entities: free plan builder vs Pro PDF export, health inspector-ready format.
-- **"HACCP plan for health inspection"** — Attribute Entities: inspector checklist alignment, FDA Food Code section citations, printable log sheets.
-- **"Printable temperature log template free"** — Attribute Entities: receiving/cooking/cooling/reheating/holding sections, no signup required.
-- **"Food safety plan template for food truck"** — Attribute Entities: mobile-vendor specific CCPs, limited-equipment process adaptation.
+- haccp plan for restaurant | 2400/LOW | Attribute: process category, Food Code citations
+- food safety plan template | 170/LOW | Attribute: small kitchens
+- free haccp software | 10/LOW | Attribute: free tier, no lock-in
+- free printable food temperature log | 90/LOW | Attribute: no signup, all five log sections
+- best haccp software for small restaurants | unverified | Attribute: free tier, per-food-type templates
+- haccp plan builder pricing | unverified | Attribute: free plan builder vs Pro PDF export
+- haccp plan for health inspection | 10/no competition index | Attribute: inspector checklist, Food Code citations, printable logs
+- printable temperature log template free | unverified | Attribute: no signup required
+- food safety plan template for food truck | unverified | Attribute: mobile-vendor CCPs
 
-## 4. The "Hidden Gems"
+## 4. Hidden Gems
 
-- **"HACCP plan for home-based food business"** — cottage-food operators are underserved by enterprise HACCP SaaS built for chains.
-- **"HACCP plan for church potluck / temporary food event"** — highly specific, near-zero incumbent coverage, recurring seasonal demand.
-- **"Sous vide HACCP critical limits"** — a precise process category most generic tools don't model correctly.
-- **"HACCP plan for food truck vs restaurant"** — comparison angle nobody targets directly; distinct equipment/CCP profile.
-- **"Cottage food law temperature requirements by state"** — pairs naturally with `/food-safety/[state]`, low competition vs generic "food safety" terms.
+- cottage food law | 6600/LOW | Why: top volume at low difficulty; enters via `/food-safety/[state]`
+- haccp plan for seafood | 20/LOW | Why: fish & seafood food type
+- haccp plan for poultry | 10/LOW | Why: chicken & poultry food type; cooking limit is the key check
+- haccp plan for catering | 10/LOW | Why: catering adds transport and holding limits
+- receiving temperature log | 20/LOW | Why: receiving section of the log generator
+- corrective action log template | 20/LOW | Why: corrective action column of the log
+- haccp verification vs validation | 10/LOW | Why: verification step of the 7-principle plan
+- haccp plan for food truck vs restaurant | unverified | Why: distinct equipment and CCP profile
+- haccp plan for home-based food business | unverified | Why: cottage operators; prior plan judgement
+- haccp plan for church potluck / temporary food event | unverified | Why: seasonal demand; prior plan judgement
+- sous vide haccp critical limits | unverified | Why: precise process category; prior plan judgement
 
 ## 5. Semantic Clusters
 
-**Cluster: Cooking & Holding Temperatures (parent entity: FDA Food Code Minimum Temperatures)**
-minimum internal cooking temperature poultry, minimum internal cooking temperature ground beef, hot holding temperature requirements, cold holding temperature requirements, reheating temperature requirements
+**Cluster: Cooking & Holding Temperatures (parent: Food safety temperature chart)**
+- minimum internal cooking temperature ground beef | 10/LOW
+- fda food cooking temperatures | 10/LOW
+- fda cooking temperatures chart | 50/MEDIUM
+- fda food temperature chart | 40/MEDIUM
+- food safety time and temperature chart | 70/HIGH
+- food cooking temperature chart | 110/HIGH
+- haccp food temperature chart | 70/HIGH
+- food holding temperature chart | 40/HIGH
+- reheating food temperature chart | 10/HIGH
+- food safety cooking temperature chart | 10/HIGH
+- food safety temp chart | 390/HIGH
+- minimum internal cooking temperature poultry | unverified
+- hot holding temperature requirements | unverified
+- cold holding temperature requirements | unverified
+- reheating temperature requirements | unverified
 
-**Cluster: Per-Food HACCP Plans (parent entity: HACCP Plan Template)**
-HACCP plan for poultry, HACCP plan for seafood, HACCP plan for dairy, HACCP plan for produce, HACCP plan for baked goods, HACCP plan for deli meats (via `/haccp-plan-template/[food-type]`, 12 food types)
+**Cluster: Cooling & Danger Zone (parent: Food safety temperature chart)**
+- 2 hour 4 hour rule food safety | 30/LOW
+- food handling temperature guide | 10/MEDIUM
+- safe cooling method for soup and stews | unverified
+- ice bath cooling technique | unverified
+- FDA two-stage cooling rule | unverified (post title)
 
-**Cluster: Per-State Food Safety Rules (parent entity: Food Safety Compliance)**
-food safety regulations [state], cottage food law [state], food handler certification requirements [state] (via `/food-safety/[state]`, 50 states)
+**Cluster: Per-Food HACCP Plans (parent: HACCP plan template)**
+- sample haccp plan | 390/LOW
+- haccp plan example | 390/LOW
+- haccp template | 90/LOW
+- haccp plan example pdf | 90/MEDIUM
+- sample haccp plan for restaurant | 20/MEDIUM
+- haccp food safety plan template | 20/HIGH
+- haccp templates free | 10/LOW
+- haccp template word | 10/no competition index
+- haccp plan for produce | 10/no competition index
+- haccp plan for dairy | unverified (food type: Dairy & cheese)
+- haccp plan for deli meats | unverified (food type: Sliced deli meats)
 
-**Cluster: HACCP Methodology Education (parent entity: HACCP Plan Builder)**
-7 principles of HACCP explained, how to identify critical control points, hazard analysis worksheet, HACCP verification vs validation
+**Cluster: Temperature Logs & Monitoring (parent: Temperature log sheet)**
+- temperature log template | 390/MEDIUM
+- printable temperature log | 110/MEDIUM
+- food temperature log sheet pdf | 110/MEDIUM
+- food temperature log sheet | 70/MEDIUM
+- cooling temperature log | 50/MEDIUM
+- food temperature sheets | 20/MEDIUM
+- printable food temperature log | 10/MEDIUM
+- hot holding temperature log sheet | 10/MEDIUM
+- cooking temperature log | 10/LOW
+- food safety temperature log sheet | 10/LOW
+- daily temperature check sheet | 10/HIGH
+- cooking temperature log sheet | 10/HIGH
+- food temperature record sheet | 10/HIGH
 
-**Cluster: Temperature Monitoring & Logging (parent entity: Temperature Log Sheet)**
-receiving temperature log, cooking temperature log, cooling temperature log, corrective action log template, daily temperature check sheet
+**Cluster: HACCP Methodology (parent: Critical control points)**
+- haccp principles | 1000/LOW
+- hazard analysis critical control point principles | 1000/LOW
+- haccp critical control points | 880/LOW
+- haccp hazard analysis critical control point | 880/LOW
+- haccp hazard analysis and critical control points | 880/LOW
+- haccp hazard analysis | 880/LOW
+- haccp 7 principles | 880/LOW
+- seven haccp principles | 880/LOW
+- hazard critical control point | 880/LOW
+- hazard critical control point haccp | 880/LOW
+- hazard and critical control points | 880/LOW
+- hazard analysis and critical control points | 140/LOW
+- hazard analysis critical control point plan | 10/MEDIUM
+- haccp control points | 880/LOW
+- critical control points for food safety | 320/LOW
+- ccp in food safety | 320/LOW
+- critical control points are | 170/LOW
+- food critical control points | 90/LOW
+- ccp food | 90/LOW
+- ccp critical control point | 90/LOW
+- ccp haccp | 30/LOW
+- critical control points in a hazard analysis are | 20/LOW
+- determine critical control points | 20/LOW
+- determine the critical control points | 50/LOW
+- monitoring critical control points | 10/LOW
+- monitoring procedures haccp | 40/LOW
+- 7 principles of haccp explained | 10/no competition index
 
-**Cluster: Business-Type Specific Plans (parent entity: HACCP Plan Builder)**
-HACCP plan for food truck, HACCP plan for catering business, HACCP plan for school cafeteria, HACCP plan for daycare kitchen
+**Cluster: Hazard Analysis & Plan Tools (parent: HACCP plan template)**
+- haccp system | 210/LOW
+- haccp process | 70/MEDIUM
+- haccp procedures | 50/LOW
+- haccp system for food safety | 140/LOW
+- hazard analysis worksheet | 20/LOW
+- haccp flow chart template | 10/LOW
+- haccp analysis | 20/LOW
+- food safety hazard analysis | 20/LOW
+- food safety analysis | 10/LOW
+- food safety management system template | 10/HIGH
+- haccp 7 | 10/LOW
 
-**Cluster: Competitor Comparisons (parent entity: HACCP Plan Builder)**
-HACCPCalc vs FoodReady AI, HACCPCalc vs SafetyCulture, free HACCP software vs paid, best free HACCP plan generator 2026
+**Cluster: Business-Type Plans (parent: HACCP plan builder)**
+- haccp plan for food truck | 10/MEDIUM
+- haccp plan for catering business | unverified
+- haccp plan for school cafeteria | unverified
+- haccp plan for daycare kitchen | unverified
 
-**Cluster: Cooling & Danger Zone (parent entity: FDA Food Code Minimum Temperatures)**
-2 hour 4 hour rule food safety, danger zone temperature range, safe cooling method for soup and stews, ice bath cooling technique
+**Cluster: Competitor & Software Comparisons (parent: HACCP plan builder)**
+- haccpcalc vs foodready ai | unverified
+- haccpcalc vs safetyculture | unverified
+- free haccp software vs paid | unverified
+- haccp plan builder free | unverified
+- free haccp plan generator | unverified
+- best free haccp plan generator 2026 | unverified
+- fooddocs haccp | unverified
+- safetyculture haccp | unverified
+
+**Cluster: Per-State Rules (parent: Food safety temperature chart)**
+- cottage food law temperature requirements | unverified
+- food safety regulations by state | unverified
+- food handler certification requirements | 40/LOW
