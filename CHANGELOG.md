@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-20: On-page SEO fixes
+
+- **Titles.** `/pricing` and `/guides` have descriptive titles instead of one-word or 26-character ones. `/pricing` is now "HACCP Plan Builder Pricing: Free and Pro Plans".
+- **Descriptions.** `/cooking-temperatures` description trimmed to under 160 characters. The home page has its own description export in `app/page.tsx` under 160 characters; the site-wide default in `lib/site.ts` is unchanged.
+- **Keywords.** Each of the 16 guides in `lib/posts.ts` has an optional `keyword` field naming its primary search term.
+
 ## 2026-10-09: llms.txt links
 
 - **llms.txt.** The Pages section of `public/llms.txt` now lists each page as an absolute markdown link to `https://haccpcalc.vercel.app`, the format the llms.txt convention expects. Page descriptions and facts are unchanged.

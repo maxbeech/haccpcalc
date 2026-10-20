@@ -24,6 +24,8 @@ export interface Post {
   slug: string;
   title: string;
   description: string;
+  /** Primary search keyword this post targets (for SEO audits and intent clarity). */
+  keyword?: string;
   updated: string;
   sections: Section[];
   table?: PostTable;
@@ -35,6 +37,7 @@ export interface Post {
 export const POSTS: Post[] = [
   {
     slug: "7-haccp-principles",
+    keyword: "7 HACCP principles",
     title: "The 7 HACCP Principles, Explained",
     description:
       "A plain-language walkthrough of the seven HACCP principles, with the FDA Food Code values you need for each one.",
@@ -87,6 +90,7 @@ export const POSTS: Post[] = [
   },
   {
     slug: "temperature-danger-zone",
+    keyword: "temperature danger zone",
     title: "The Temperature Danger Zone (41°F–135°F)",
     description:
       "What the temperature danger zone is, the four-hour rule, and how to keep TCS food out of it.",
@@ -114,6 +118,7 @@ export const POSTS: Post[] = [
   },
   {
     slug: "haccp-vs-servsafe",
+    keyword: "HACCP vs ServSafe",
     title: "HACCP vs ServSafe: What's the Difference?",
     description:
       "HACCP is a food safety system; ServSafe is a certification program. Here's how they relate.",
@@ -136,6 +141,7 @@ export const POSTS: Post[] = [
   },
   {
     slug: "food-cooling-rule",
+    keyword: "FDA two-stage cooling rule",
     title: "The FDA Two-Stage Cooling Rule",
     description:
       "Cool cooked TCS food from 135°F to 70°F in 2 hours, then to 41°F within 6 hours total — here's how and why.",
@@ -161,6 +167,7 @@ export const POSTS: Post[] = [
 const WEEK2_POSTS: Post[] = [
   {
     slug: "haccp-plan-template",
+    keyword: "HACCP plan template",
     title: "How to Use a HACCP Plan Template (Restaurant Quick-Start)",
     description:
       "A HACCP plan template gives your food safety system a starting framework. What each section must contain, a 4-step restaurant build process, and how to adapt it to your kitchen.",
@@ -214,6 +221,7 @@ const WEEK2_POSTS: Post[] = [
   },
   {
     slug: "food-safety-plan-template",
+    keyword: "food safety plan template",
     title: "Food Safety Plan Template for Small Kitchens",
     description:
       "A food safety plan template covers hazards, CCPs and monitoring procedures. Here's what a simple, compliant plan looks like for small food businesses.",
@@ -242,6 +250,7 @@ const WEEK2_POSTS: Post[] = [
   },
   {
     slug: "critical-control-point-examples",
+    keyword: "critical control points examples",
     title: "Critical Control Points: 6 Real-World Examples",
     description:
       "Six concrete critical control point examples from common foodservice operations, with the critical limits, monitoring methods, and corrective actions.",
@@ -287,6 +296,7 @@ const WEEK2_POSTS: Post[] = [
   },
   {
     slug: "foodborne-illness-prevention",
+    keyword: "foodborne illness prevention",
     title: "Foodborne Illness Prevention in Restaurants",
     description:
       "The most effective foodborne illness prevention practices for restaurant kitchens: personal hygiene, temperature control, and cross-contamination barriers.",
@@ -321,6 +331,7 @@ const WEEK2_POSTS: Post[] = [
   },
   {
     slug: "food-safety-audit-checklist",
+    keyword: "food safety audit checklist",
     title: "Restaurant Food Safety Audit Checklist",
     description:
       "A 30-point restaurant food safety audit checklist covering receiving, storage, cooking, cooling, sanitising and personal hygiene, aligned with FDA Food Code.",
@@ -354,6 +365,7 @@ const WEEK2_POSTS: Post[] = [
   },
   {
     slug: "cross-contamination-prevention",
+    keyword: "cross-contamination prevention",
     title: "Cross-Contamination in Food Safety: How to Stop It",
     description:
       "Cross-contamination transfers pathogens from one surface or food to another. Learn the three routes and the practical barriers that block each one.",
@@ -387,6 +399,7 @@ const WEEK2_POSTS: Post[] = [
   },
   {
     slug: "servsafe-food-manager-certification",
+    keyword: "ServSafe Food Manager certification",
     title: "ServSafe Food Manager: Exam & Certification Guide",
     description:
       "What the ServSafe Food Protection Manager certification covers, how the exam works, what it costs, and which states require a certified manager on site.",
@@ -414,6 +427,7 @@ const WEEK2_POSTS: Post[] = [
   },
   {
     slug: "food-handler-training-online",
+    keyword: "food handler training online",
     title: "Food Handler Training Online: What You'll Learn",
     description:
       "Online food handler training covers personal hygiene, temperature control, cross-contamination, cleaning and sanitising. What to expect and how long it takes.",
@@ -441,6 +455,7 @@ const WEEK2_POSTS: Post[] = [
   },
   {
     slug: "restaurant-food-safety-checklist",
+    keyword: "restaurant food safety checklist",
     title: "Daily Food Safety Checklist for Restaurants",
     description:
       "A practical daily food safety checklist for restaurants: opening checks, mid-shift temperature logs, closing sanitation tasks, and what to record.",
@@ -468,6 +483,7 @@ const WEEK2_POSTS: Post[] = [
   },
   {
     slug: "haccp-reheating-temperature",
+    keyword: "HACCP reheating temperature",
     title: "HACCP Reheating: 165°F in 2 Hours Explained",
     description:
       "FDA Food Code requires reheating TCS food to 165°F within two hours for hot holding. Here's why the limit exists and what to do if you miss it.",
@@ -496,6 +512,7 @@ const WEEK2_POSTS: Post[] = [
   },
   {
     slug: "food-receiving-inspection",
+    keyword: "food receiving inspection",
     title: "Food Receiving Inspection: What to Check",
     description:
       "A step-by-step food receiving inspection checklist: temperatures, packaging integrity, supplier documentation, and what to reject on delivery.",
@@ -533,6 +550,7 @@ POSTS.push(...WEEK2_POSTS);
 const WEEK3_POSTS: Post[] = [
   {
     slug: "what-is-a-haccp-plan",
+    keyword: "what is a HACCP plan",
     title: "What Is a HACCP Plan? A Plain-English Guide",
     description:
       "What is a HACCP plan, who needs one, and what goes inside it? An FDA-sourced answer with a worked example — build yours free with HACCPCalc.",

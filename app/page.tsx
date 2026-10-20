@@ -1,10 +1,18 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { PlanBuilder } from "@/components/PlanBuilder";
 import { JsonLd, softwareAppLd, faqLd, organizationLd, websiteLd } from "@/components/JsonLd";
 import { HOME_FAQ } from "@/lib/faq";
 import { FOOD_TYPES } from "@/lib/data/foodTypes";
 import { COOK_RULE_LIST } from "@/lib/data/temps";
 import { SITE } from "@/lib/site";
+
+// Home-only description, kept under 160 characters for SERP snippets.
+// The site-wide default in lib/site.ts is left unchanged for other pages.
+export const metadata: Metadata = {
+  description:
+    "Free HACCP plan builder and food safety temperature log. Build a 7-principle HACCP plan with FDA Food Code 2022 critical limits and print it.",
+};
 
 export default function Home() {
   return (

@@ -13,7 +13,7 @@ const TRAIL = [
 export const metadata: Metadata = {
   title: "FDA Food Code Cooking Temperatures Chart (2022)",
   description:
-    "Free FDA Food Code 2022 minimum internal cooking temperatures chart: poultry 165°F, ground meat 155°F, whole-muscle meat and fish 145°F, plus holding, cooling and reheating rules.",
+    "FDA Food Code 2022 minimum cooking temperatures chart: poultry 165°F, ground meat 155°F, whole cuts and fish 145°F, plus holding and cooling rules.",
   alternates: { canonical: "/cooking-temperatures" },
 };
 

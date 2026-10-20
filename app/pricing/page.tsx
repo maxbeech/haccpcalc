@@ -11,7 +11,7 @@ const TRAIL = [
 ];
 
 export const metadata: Metadata = {
-  title: "Pricing",
+  title: "HACCP Plan Builder Pricing: Free and Pro Plans",
   description: "HACCPCalc is free to build HACCP plans and temperature logs. Pro adds saved plans, PDF export and team sharing.",
   alternates: { canonical: "/pricing" },
 };

@@ -10,7 +10,7 @@ const TRAIL = [
 ];
 
 export const metadata: Metadata = {
-  title: "HACCP & Food Safety Guides",
+  title: "HACCP & Food Safety Guides for Restaurant Kitchens",
   description:
     "Plain-language guides to HACCP and food safety: the 7 principles, the temperature danger zone, the two-stage cooling rule, and HACCP vs ServSafe.",
   alternates: { canonical: "/guides" },
