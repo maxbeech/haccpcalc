@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-10-26: On-page SEO follow-up
+
+- **Titles.** `/methodology` title is now "Methodology & Sources — How HACCPCalc Works" instead of a 21-character one.
+- **Descriptions.** `/pricing` description is 126 characters and names the Pro price ($29/mo), matching the page.
+
 ## 2026-10-20: On-page SEO fixes
 
 - **Titles.** `/pricing` and `/guides` have descriptive titles instead of one-word or 26-character ones. `/pricing` is now "HACCP Plan Builder Pricing: Free and Pro Plans".
