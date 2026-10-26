@@ -9,7 +9,7 @@ const TRAIL = [
 ];
 
 export const metadata: Metadata = {
-  title: "Methodology & Sources",
+  title: "Methodology & Sources — How HACCPCalc Works",
   description:
     "How HACCPCalc derives its critical limits: every temperature is cited verbatim from the FDA Food Code 2022. No fabricated values.",
   alternates: { canonical: "/methodology" },

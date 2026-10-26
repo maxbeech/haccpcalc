@@ -12,7 +12,7 @@ const TRAIL = [
 
 export const metadata: Metadata = {
   title: "HACCP Plan Builder Pricing: Free and Pro Plans",
-  description: "HACCPCalc is free to build HACCP plans and temperature logs. Pro adds saved plans, PDF export and team sharing.",
+  description: "HACCPCalc is free to build HACCP plans and print temperature logs. Pro ($29/mo) adds saved plans, PDF export and team sharing.",
   alternates: { canonical: "/pricing" },
 };
 
