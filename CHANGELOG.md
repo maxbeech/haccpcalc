@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-06: active return measurement
+
+- Record first measured visits and intentional returns using the shared three-hour, seven-day browser contract.
+- Preserve the product analytics boundary and add regression tests for passive tabs, continuous sessions, consent and storage errors.
+
 ## 2026-10-26: On-page SEO follow-up
 
 - **Titles.** `/methodology` title is now "Methodology & Sources — How HACCPCalc Works" instead of a 21-character one.
