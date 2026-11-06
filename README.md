@@ -81,3 +81,5 @@ GA4 is configured with `NEXT_PUBLIC_GA_MEASUREMENT_ID`. The reviewed value actio
 The generated return modules come from OpenHelm/shared/src through Products/_services/openhelm-analytics. Keep existing consent gates, exclude explicit test identities (`oh_is_test`), and run the return contract tests alongside the full test suite before release. Register the `oh_cohort_date` and `oh_return_contract` event dimensions in the selected GA property.
 
 Search Console is excluded while this product is available only on a vercel.app subdomain. Connect the owned custom domain before submitting it; Google Analytics remains configured.
+
+Value delivery is `plan_generated`: a visitor-customized plan has rendered with monitoring rows and no missing-requirement warnings, once per builder mount. The seeded example and opening the print dialog do not qualify. `plan_print_started` remains a separate intent event.

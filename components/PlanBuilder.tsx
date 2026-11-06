@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { buildPlan, ProcessCategory, StepId, STEP_LABELS, STEP_ORDER } from "@/lib/calc/haccp";
 import { buildLogSheet, LogPointId } from "@/lib/calc/templog";
 import { FOOD_TYPES } from "@/lib/data/foodTypes";
@@ -61,6 +61,14 @@ export function PlanBuilder({ initialSlug = "chicken" }: { initialSlug?: string 
     () => buildLogSheet({ foodName: foodName || "Your food", cookCategory: cookCategory || undefined, points: logPoints(steps) }),
     [foodName, cookCategory, steps],
   );
+
+  const delivered = useRef(false);
+  useEffect(() => {
+    // A customized, rendered plan is value; opening the print dialog is intent.
+    if (!used.current || delivered.current || plan.rows.length === 0 || plan.warnings.length > 0) return;
+    delivered.current = true;
+    trackEvent("plan_generated", { process: plan.process });
+  }, [plan]);
 
   return (
     <div className="space-y-8" id="builder">

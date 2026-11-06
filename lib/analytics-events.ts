@@ -9,6 +9,8 @@ import { track } from "./openhelm-analytics";
 export interface AnalyticsEventMap {
   /** First change to the plan builder on a page (not the seeded plan). */
   calculator_used: { process: string };
+  /** Customized plan rendered successfully, once per builder mount; no warnings. */
+  plan_generated: { process: string };
   /** "Print / Save as PDF" clicked on the plan and log sheet. */
   plan_print_started: Record<string, never>;
   /** /pricing opened. */

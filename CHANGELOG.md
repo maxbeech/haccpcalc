@@ -1,3 +1,8 @@
+## 2026-11-06: Measure a completed customized plan
+
+- Emit `plan_generated` after a customized plan renders without missing requirements; preserve the separate print-intent event.
+- Cover seeded plans, successful customization, repeat edits and invalid cooking requirements.
+
 ## 2026-11-06
 
 - Search Console is excluded while this product is available only on a vercel.app subdomain. Connect the owned custom domain before submitting it; Google Analytics remains configured.
