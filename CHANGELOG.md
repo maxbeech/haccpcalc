@@ -1,3 +1,7 @@
+## 2026-11-06
+
+- Search Console is excluded while this product is available only on a vercel.app subdomain. Connect the owned custom domain before submitting it; Google Analytics remains configured.
+
 # Changelog
 
 ## 2026-11-06: active return measurement
