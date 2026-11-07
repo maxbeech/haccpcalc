@@ -58,3 +58,5 @@
 - Checkout failures are now reported instead of swallowed.
 - Added `app/error.tsx` and `app/global-error.tsx` so render crashes are reported.
 - Added unit tests (vitest) for the feedback control, Sentry options and the checkout failure path.
+
+2026-11-06: The shared GA bootstrap disables implicit page views before startup, so the explicit route tracker owns the initial and subsequent SPA page views. Product value and active-return events remain enabled.

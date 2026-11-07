@@ -83,3 +83,5 @@ The generated return modules come from OpenHelm/shared/src through Products/_ser
 Search Console is excluded while this product is available only on a vercel.app subdomain. Connect the owned custom domain before submitting it; Google Analytics remains configured.
 
 Value delivery is `plan_generated`: a visitor-customized plan has rendered with monitoring rows and no missing-requirement warnings, once per builder mount. The seeded example and opening the print dialog do not qualify. `plan_print_started` remains a separate intent event.
+
+2026-11-06: The shared GA bootstrap disables implicit page views before startup, so the explicit route tracker owns the initial and subsequent SPA page views. Product value and active-return events remain enabled.
