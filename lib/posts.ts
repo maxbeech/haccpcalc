@@ -678,6 +678,110 @@ const WEEK3_POSTS: Post[] = [
       { text: "NASA Spinoff — How the Moon Landing Led to Safer Food for Everyone", href: "https://spinoff.nasa.gov/moon-landing-food-safety" },
     ],
   },
+  {
+    slug: "temperature-log-sheet",
+    keyword: "temperature log sheet",
+    title: "How to Fill In a Food Temperature Log Sheet, With a Worked Example",
+    description:
+      "What goes on a food temperature log sheet, the reading each row must reach, and a worked example of one chicken soup batch from cook to cold storage.",
+    updated: "2026-11-10",
+    sections: [
+      {
+        heading: "What a temperature log sheet is for",
+        body: [
+          "A temperature log sheet is a dated record of measured food temperatures at the points where a food could become unsafe: cooking, cooling, holding and receiving. It is the evidence that your HACCP plan's monitoring step actually happened. The plan says what to check; the sheet proves that someone checked it, when, and what they found.",
+          "The most common reason a sheet fails review is that it holds ticks instead of numbers. A check mark or the word OK tells an inspector nothing about whether the soup was 68°F or 98°F at two hours. Write the probe reading in degrees Fahrenheit every time.",
+        ],
+      },
+      {
+        heading: "The six columns, and why each one is there",
+        body: [
+          "A usable sheet has six columns: Date, Time, Food item, Temp (°F), Corrective action and Initials. This is the layout HACCPCalc's log generator produces for each food type, and it matches the structure of the local health department templates we checked, including Minneapolis and Fairfax County.",
+          "Time matters as much as temperature for cooling and holding, because the limits are time-bound. A reading with no time cannot show that a two-hour cooling window was met. The corrective action column is where you write what you did about an out-of-range reading, not a general comment. Initials tie each entry to a person who can be asked about it.",
+        ],
+      },
+      {
+        heading: "The targets each row has to hit",
+        body: [
+          "Every target on the sheet comes from the FDA Food Code 2022, and the numbers are the same ones the HACCP engine uses for critical limits, so the log and the plan cannot drift apart. The rows that come up most often are these.",
+          "Cooking poultry must reach 165°F and hold for 1 second (§3-401.11). Ground and injected meat is 155°F for 17 seconds, and whole-muscle beef, pork, seafood and eggs cooked for immediate service are 145°F for 15 seconds.",
+          "Cooling runs in two stages. Cooked food must fall from 135°F to 70°F within 2 hours, then reach 41°F or below within 6 hours in total (§3-501.14). The sheet therefore needs a check at the 2-hour mark and another at the 6-hour mark.",
+          "Hot holding must stay at 135°F or above, and cold holding at 41°F or below (§3-501.16). Reheated food for hot holding must reach 165°F and be held for 15 seconds, within 2 hours (§3-403.11). Receiving rows reject any cold product above 41°F at the door.",
+        ],
+      },
+      {
+        heading: "How often to check",
+        body: [
+          "Cooking is logged for every batch, and reheating for every batch as well. Hot and cold holding are logged every 4 hours, which is the interval most inspectors look for on a holding log. Cooling is logged at 2 hours and at 6 hours from the moment the food drops below 135°F. Receiving is logged on every delivery.",
+          "Cold storage units get their own row, checked every 4 hours, with a target of 41°F or below. A unit that drifts above that is a repair problem, so the corrective action is to move the product and call for service, not simply to note the reading.",
+        ],
+      },
+      {
+        heading: "Worked example: one batch of chicken soup",
+        body: [
+          "Take a 4-gallon batch of chicken and vegetable soup, made on a Tuesday morning. The soup is cooked, cooled in an ice bath, and then moved to the walk-in for service. The table below shows what the sheet looks like after that batch, with every reading in the right column and a time on each.",
+          "The cooling clock starts when the soup first reads below 135°F. In this example that is 10:05, so the 2-hour check is due at 12:05 and the 6-hour check at 16:05. The soup read 68°F at 12:05, which is inside the 70°F limit, and 39°F at 16:05, inside the 41°F limit. Both checks pass, so the corrective action column stays as a plain statement that none was needed.",
+          "The numbers in this example are illustrative readings, not measurements from a real kitchen, but every target and every deadline is the one the sheet itself prints. If the 2-hour reading had been 74°F, the row's corrective action would tell you to reheat the soup to 165°F and restart cooling, or discard it. Write the action you actually took on that line, and the time you took it.",
+        ],
+      },
+      {
+        heading: "Mistakes that fail an inspection",
+        body: [
+          "Round numbers repeated across shifts look fabricated, and an unbroken run of identical entries written in one sitting after the shift is a common red flag. Enter each reading when you take it, not at the end of the day from memory.",
+          "A blank corrective action column on an out-of-range reading is worse than a missed check, because it shows the problem was seen and nothing was done. Equally, a probe that has not been calibrated makes every number on the sheet questionable, so calibrate the thermometer on a schedule and note that on the sheet too.",
+        ],
+      },
+      {
+        heading: "Making the sheet work in a real kitchen",
+        body: [
+          "Keep the sheet at the point of use: beside the walk-in, the hot-hold line and the cooling station, not in an office drawer. Review it at the end of each shift and again weekly, looking for gaps in times and for rows where the corrective action has been left blank.",
+          "If you are building your first plan, the log is the last piece. Start with the plan so that every monitoring row maps to a critical control point, then print the sheet from that plan. Our guide on what a HACCP plan contains covers how the two documents fit together.",
+        ],
+      },
+    ],
+    table: {
+      caption: "Worked example: one chicken soup batch on the temperature log (illustrative readings)",
+      headers: ["Date", "Time", "Food item", "Temp (°F)", "Corrective action", "Initials"],
+      rows: [
+        ["2026-11-10", "09:40", "Chicken soup, 4 gal", "167", "None needed (at least 165°F, held 1 second)", "JB"],
+        ["2026-11-10", "10:05", "Chicken soup, 4 gal", "134", "Cooling clock starts (below 135°F)", "JB"],
+        ["2026-11-10", "12:05", "Chicken soup, 4 gal", "68", "None needed (70°F or below by 2 hours)", "JB"],
+        ["2026-11-10", "16:05", "Chicken soup, 4 gal", "39", "None needed (41°F or below by 6 hours)", "JB"],
+        ["2026-11-10", "20:00", "Chicken soup, walk-in", "38", "None needed (41°F or below)", "MR"],
+      ],
+    },
+    faq: [
+      {
+        q: "What should I write on a food temperature log sheet?",
+        a: "The probe reading in degrees Fahrenheit, the time you took it, the food item, any corrective action, and your initials. A tick or the word OK does not show that the food reached its limit.",
+      },
+      {
+        q: "How often should hot and cold holding be logged?",
+        a: "Every 4 hours is the interval most inspectors expect for hot and cold holding, and the interval HACCPCalc's log generator prints. Check your state or local health department's rules, because some jurisdictions set their own intervals.",
+      },
+      {
+        q: "What do I write when a reading is out of range?",
+        a: "Write the action you actually took, such as reheating to 165°F and restarting cooling, or discarding the food. Then record the time of the action. A blank corrective action on an out-of-range reading is one of the most common findings on a log.",
+      },
+      {
+        q: "Do I need a temperature log if I already have a HACCP plan?",
+        a: "Yes. The plan says what to monitor and the limits to hold it to, while the log is the record that monitoring took place. An inspector will ask for the log to confirm the plan is being followed.",
+      },
+    ],
+    relatedLinks: [
+      { text: "What is a HACCP plan? A plain-English guide", href: "/guides/what-is-a-haccp-plan" },
+      { text: "The FDA two-stage cooling rule, explained", href: "/guides/food-cooling-rule" },
+      { text: "The temperature danger zone, explained", href: "/guides/temperature-danger-zone" },
+      { text: "How to use a HACCP plan template", href: "/guides/haccp-plan-template" },
+      { text: "FDA Food Code cooking temperatures chart", href: "/cooking-temperatures" },
+      { text: "How HACCPCalc sources its critical limits", href: "/methodology" },
+    ],
+    sources: [
+      { text: "FDA — Food Code 2022", href: "https://www.fda.gov/food/fda-food-code/food-code-2022" },
+      { text: "Minneapolis Health Department — Food temperature log", href: "https://www.minneapolismn.gov/media/-www-content-assets/documents/English--Food-temperature-log.pdf" },
+      { text: "Fairfax County Health Department — Food temperature log", href: "https://www.fairfaxcounty.gov/health/sites/health/files/assets/documents/pdf/food-temperature-log.pdf" },
+    ],
+  },
 ];
 POSTS.push(...WEEK3_POSTS);
 
