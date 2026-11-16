@@ -782,6 +782,110 @@ const WEEK3_POSTS: Post[] = [
       { text: "Fairfax County Health Department — Food temperature log", href: "https://www.fairfaxcounty.gov/health/sites/health/files/assets/documents/pdf/food-temperature-log.pdf" },
     ],
   },
+  {
+    slug: "what-temperature-kills-bacteria-in-food",
+    keyword: "what temperature kills bacteria in food",
+    title: "What Temperature Kills Bacteria in Food? It Depends on Time",
+    description:
+      "Why no single temperature kills bacteria in food, the minimum cooking temperatures and hold times the FDA Food Code sets, and a worked example of a pork roast that reads 140°F.",
+    updated: "2026-11-16",
+    sections: [
+      {
+        heading: "The short answer: no single temperature",
+        body: [
+          "There is no single temperature that kills bacteria in food. Heat kills by a combination of temperature and time, so a probe reading of 165°F tells you little on its own unless the food stayed at that temperature long enough. A higher temperature needs a shorter hold, and a lower one needs a longer hold, to reach the same effect on the same organism.",
+          "For that reason food safety rules do not publish a kill temperature. They publish a minimum internal temperature together with the time the food must hold at that temperature. The FDA Food Code 2022, which most US state and local food rules are based on, sets the values HACCPCalc uses for its critical limits. The USDA Food Safety and Inspection Service publishes a shorter chart of minimum endpoints for meat and poultry, and it says a food thermometer is the only reliable way to confirm that a food has reached a safe temperature.",
+        ],
+      },
+      {
+        heading: "The minimum temperatures, and the time each one needs",
+        body: [
+          "The table below lists the cooking rules the calculator applies to each food category. The second column is the minimum internal temperature, the third is how long the food must hold at that temperature, and the last column lists the alternative combinations the Food Code allows for the same food. A cook may use any alternative in that column, but must then hold the food for the time shown beside it.",
+          "Poultry is the simplest case: 165°F with a hold of 1 second. Whole cuts of pork, beef, veal, lamb, fish and eggs cooked for immediate service use 145°F for 15 seconds. Ground and injected meat is held to a higher standard, 155°F for 17 seconds, because grinding and injecting move surface bacteria into the middle of the product where a short surface sear will not reach them.",
+        ],
+      },
+      {
+        heading: "Worked example: a pork roast that reads 140°F",
+        body: [
+          "Take a 2 kg pork loin roast that goes into the oven at 10:00. At 14:40, with the roast out of the oven, the probe in its thickest part reads 140°F. Under the default rule for whole-muscle pork, 145°F for 15 seconds, the roast is not yet safe, because 140°F is below the minimum.",
+          "The alternatives column gives a second route. At 140°F the Food Code allows a hold of 720 seconds, which is 12 minutes. If the roast is kept at 140°F or above for the full 12 minutes, with the probe checked at the start and the end of that time, the lethality requirement is met. At 150°F the hold falls to 204 seconds, or 3 minutes 24 seconds, so a cook who is near 150°F has a much shorter wait.",
+          "The simplest route is to hold the roast in the oven until the probe reads 145°F and then keep it there for 15 seconds. Whichever route you use, write the time you started the hold and the final reading on the temperature log, as described in our guide to filling in a temperature log sheet. The record should show that the hold happened, not only the final number.",
+        ],
+      },
+      {
+        heading: "Why colour is not a reliable check",
+        body: [
+          "Colour is the check most cooks reach for first, and it is the one that fails most often. A pink centre can be safe and a grey one can be under-cooked, depending on the fat, the pH of the marinade and the age of the meat. The USDA says a hamburger cooked to 160°F, measured with a food thermometer, is safe regardless of its colour.",
+          "A thermometer is only as good as its calibration. Check the probe in ice water and in boiling water on a schedule, and write the check on the same sheet as the cooking readings. A probe that reads 3°F high on a regular basis will make every row of the log look compliant when it is not.",
+        ],
+      },
+      {
+        heading: "Why 135°F and 41°F still matter",
+        body: [
+          "Cooking kills bacteria. Cooling and holding decide whether the organisms that survived, or that arrived after cooking, get the chance to multiply. The USDA says bacteria grow most rapidly between 40°F and 140°F and can double in number in as little as 20 minutes. That is why the Food Code's holding limits are set where they are: 41°F or below for cold holding and 135°F or above for hot holding.",
+          "Cooling has its own clock. Cooked food must fall from 135°F to 70°F within 2 hours, and then reach 41°F or below within 6 hours in total. A roast that spends three hours in the middle of the danger zone can be perfectly cooked and still fail the rule, because the hazard was in the time, not the heat.",
+          "The two sources also differ on hot holding. The USDA advises keeping hot food at 140°F or warmer, while the FDA limit of 135°F is the one the calculator uses. A stricter state or local rule overrides both, so check it before you set your own hot-holding limit.",
+        ],
+      },
+      {
+        heading: "Where the sources disagree on ground meat",
+        body: [
+          "The USDA chart lists ground meats at 160°F and ground poultry at 165°F. The Food Code default for ground and injected meat is 155°F held for 17 seconds, with 158°F for 1 second as an alternative. These are two published rules, and they are not the same rule.",
+          "Where a regulator publishes a higher figure, the higher figure is the safer working limit, and a plan that names one source should say which one. HACCPCalc's critical limits follow the Food Code, the source it cites throughout. If your state has adopted a different edition, or your health department asks for the USDA figure, change the critical limit in your plan to match and log against that number.",
+        ],
+      },
+      {
+        heading: "What this means for your HACCP plan",
+        body: [
+          "A cooking step is usually a critical control point, because it is the last point in the process where a hazard can be removed. The plan should name the food category, the minimum temperature and the hold time, and the log should record the probe reading and the time the hold began. Each row of the plan should match a row of the table above, so an inspector can trace a reading back to a rule without any guesswork.",
+          "The HACCP plan template guide shows where those fields sit in a complete plan, and the temperature log sheet guide shows how to record the readings. Between them they cover the cooking step from the probe to the paperwork.",
+        ],
+      },
+    ],
+    table: {
+      caption: "Minimum internal cooking temperatures and hold times, FDA Food Code 2022 as used in HACCPCalc",
+      headers: ["Food category", "Minimum temperature", "Hold time", "Alternatives (temperature, hold)"],
+      rows: [
+        ["Poultry, stuffed foods and poultry stuffing", "165°F", "1 second", "None listed"],
+        ["Reheated food for hot holding", "165°F", "15 seconds", "None listed"],
+        ["Ground and injected meat", "155°F", "17 seconds", "145°F for 3 minutes; 150°F for 1 minute; 158°F for 1 second"],
+        ["Whole-muscle pork, beef, veal and lamb", "145°F", "15 seconds", "140°F for 12 minutes; 150°F for 3 minutes 24 seconds (pork)"],
+        ["Fish and seafood", "145°F", "15 seconds", "None listed"],
+        ["Eggs cooked for immediate service", "145°F", "15 seconds", "None listed"],
+      ],
+    },
+    faq: [
+      {
+        q: "Is there one temperature that kills all bacteria in food?",
+        a: "No. Heat kills by a combination of temperature and time, and different organisms need different amounts of each. Food rules set a minimum internal temperature with a hold time, and the alternatives show other combinations that give the same effect.",
+      },
+      {
+        q: "How long does chicken need to be held at 165°F?",
+        a: "The Food Code default for poultry is 165°F with a hold of 1 second. HACCPCalc applies that rule to chicken, turkey, duck and poultry stuffing. Your state or local rules may differ, so check them before you finalise a plan.",
+      },
+      {
+        q: "Why does the calculator say 155°F for ground meat when the USDA chart says 160°F?",
+        a: "The calculator follows the FDA Food Code, which sets 155°F held for 17 seconds for ground and injected meat. The USDA chart lists 160°F. Where a regulator publishes a higher figure, use the higher one, and name the source your plan follows.",
+      },
+      {
+        q: "Is the colour of a cooked burger a safe check?",
+        a: "No. The USDA says a hamburger cooked to 160°F, measured with a food thermometer, is safe whatever its colour. Colour is not a reliable indicator of safety.",
+      },
+    ],
+    relatedLinks: [
+      { text: "The temperature danger zone, explained", href: "/guides/temperature-danger-zone" },
+      { text: "The FDA two-stage cooling rule, explained", href: "/guides/food-cooling-rule" },
+      { text: "What is a HACCP plan? A plain-English guide", href: "/guides/what-is-a-haccp-plan" },
+      { text: "How to fill in a food temperature log sheet", href: "/guides/temperature-log-sheet" },
+      { text: "FDA Food Code cooking temperatures chart", href: "/cooking-temperatures" },
+      { text: "How HACCPCalc sources its critical limits", href: "/methodology" },
+    ],
+    sources: [
+      { text: "USDA FSIS — Safe Minimum Internal Temperature Chart", href: "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart" },
+      { text: "USDA FSIS — How Temperatures Affect Food", href: "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/how-temperatures-affect-food" },
+      { text: "FDA — Food Code 2022", href: "https://www.fda.gov/food/fda-food-code/food-code-2022" },
+    ],
+  },
 ];
 POSTS.push(...WEEK3_POSTS);
 
